@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Список залів</title>
+</head>
+<body>
+    <h1>Наші зали</h1>
+    <ul>
+        {% for hall in halls%}
+            <li>
+                <h3>{{hall.name}}</h3>
+                <p>{{hall.description}}</p>
+                {% if hall.image %}
+                    <img src='{{hall.image.url}}' width='300'>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
