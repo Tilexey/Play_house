@@ -4,3 +4,4 @@ from .models import *
 admin.site.register(Category)
 admin.site.register(Hall)
 admin.site.register(Place)
+admin.site.register(Booking)
