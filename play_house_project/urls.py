@@ -21,5 +21,6 @@ from play_house_app import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('halls/', views.hall_list, name='hall_list'),
+    path('booking/', views.create_booking, name='create_booking')
     
 ]

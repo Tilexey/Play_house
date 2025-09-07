@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Бронювання</title>
+</head>
+<body>
+    <h1>Забронювати місце</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Забронювати</button>
+    </form>
+</body>
+</html>
