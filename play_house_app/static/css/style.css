@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #eee;
+    background-color: #111;
+}
+
+.container {
+    width: 90%; max-width: 1100px; margin: auto; padding: 20px 0;
+}
+
+.header {
+    background: #0b2a1f; padding: 20px 0; border-bottom: 3px solid #1db954;
+}
+.logo {
+    font-size: 28px; color: #1db954; margin: 0;
+}
+.nav a {
+    color: #eee; margin-left: 20px; text-decoration: none;
+}
+.nav a:hover {
+    color: #1db954;
+}
+
+.section {
+    padding: 50px 0; background: #222;
+}
+.section.dark {
+    background: #0b2a1f;
+}
+.section h2 {
+    color: #1db954; margin-bottom: 25px;
+}
+
+.game-block {
+    margin-bottom: 60px;
+}
+.game-title {
+    font-size: 24px; color: #1db954; margin-bottom: 20px;
+}
+
+.hall-list {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;
+}
+.hall-card {
+    background: #1c1c1c; border: 2px solid #1db954;
+    border-radius: 10px; padding: 20px; text-align: center;
+}
+.hall-img {
+    width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 15px;
+}
+.hall-card h3 {
+    margin: 10px 0; color: #1db954;
+}
+
+.place-list {
+    list-style: none; padding: 0; margin-top: 10px;
+}
+.place-list li {
+    margin: 6px 0; font-size: 14px;
+}
+.place-list .available {
+    color: #8cff00;
+}
+.place-list .booked {
+    color: #ff4c4c;
+}
+
+.tournament-list {
+    list-style: none; padding: 0;
+}
+.tournament-list li {
+    margin: 10px 0; padding-bottom: 10px; border-bottom: 1px solid #444;
+    font-size: 16px;
+}
+
+.footer {
+    text-align: center; padding: 20px; background: #0b2a1f;
+    border-top: 3px solid #1db954;
+}
