@@ -14,6 +14,7 @@ class Hall(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to='hall_images/')
+    capacity = models.IntegerField()
     
     def __str__(self):
         return self.name
