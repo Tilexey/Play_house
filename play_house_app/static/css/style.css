@@ -78,3 +78,24 @@ body {
     text-align: center; padding: 20px; background: #0b2a1f;
     border-top: 3px solid #1db954;
 }
+
+.halls-list2 {
+    display: flex;
+    flex-wrap: wrap; /* перенос на новий ряд */
+    gap: 20px; /* відстань між залами */
+    list-style: none;
+    padding: 0;
+}
+
+.hall-card2 {
+    flex: 0 0 calc(33.333% - 20px); /* 3 картки в ряд */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px;
+    background: #fff;
+    text-align: center;
+}
+.hall-card2 img {
+    max-width: 100%;
+    border-radius: 6px;
+}

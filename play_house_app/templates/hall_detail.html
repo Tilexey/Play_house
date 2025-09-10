@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ hall.name }}</title>
+</head>
+<body>
+    <h1>{{ hall.name }}</h1>
+    <p>{{ hall.description }}</p>
+
+    <h2>Доступні столи</h2>
+    <ul>
+        {% for place in places %}
+            <li>
+                {{ place.number }} ({{ place.category.name }})
+                <a href="{% url 'create_booking' place.id %}">Забронювати</a>
+            </li>
+        {% empty %}
+            <li>У цьому залі ще немає столів.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'hall_list' %}">← Назад до залів</a>
+</body>
+</html>
