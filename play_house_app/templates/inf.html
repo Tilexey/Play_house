@@ -15,7 +15,7 @@
             <a href="#billiard">Більярд</a>
             <a href="#bowling">Боулінг</a>
             <a href="#tournaments">Турніри</a>
-            <a href="#contacts">Контакти</a>
+            <a href="javascript:void(0)" id="contacts-toggle">Контакти</a>
             <a href="/halls/">Зали</a>
             <a href="/booking/">Бронювання</a>
         </nav>
@@ -23,7 +23,6 @@
 </header>
 
 <div class="container main-layout">
-    <!-- Основний контент -->
     <main class="content">
         <article>
             <h2>Ласкаво просимо до нашого ігрового клубу</h2>
@@ -57,19 +56,27 @@
                 Взяти участь може кожен – достатньо лише зареєструватися та прийти. 
                 Це чудова можливість перевірити свої сили та весело провести час!
             </p>
-
-            <h3 id="contacts">Контакти</h3>
-            <p>
-                📍 Адреса: [вказати адресу клубу] <br>
-                📞 Телефон: [номер телефону] <br>
-                📧 Email: [пошта клубу] <br>
-                <br>
-                <strong>Години роботи:</strong> <br>
-                Пн–Чт: 12:00 – 00:00 <br>
-                Пт–Нд: 12:00 – 02:00
-            </p>
         </article>
     </main>
 </div>
+
+<!-- Тільки тут залишаємо Контакти -->
+<div id="contacts-panel" class="contacts-panel">
+    <h3>Контакти</h3>
+    <p>
+        📍 Адреса: [вказати адресу клубу] <br>
+        📞 Телефон: [номер телефону] <br>
+        📧 Email: [пошта клубу] <br><br>
+        <strong>Години роботи:</strong> <br>
+        Пн–Чт: 12:00 – 00:00 <br>
+        Пт–Нд: 12:00 – 02:00
+    </p>
+</div>
+
+<script>
+document.getElementById("contacts-toggle").addEventListener("click", function() {
+    document.getElementById("contacts-panel").classList.toggle("active");
+});
+</script>
 </body>
 </html>

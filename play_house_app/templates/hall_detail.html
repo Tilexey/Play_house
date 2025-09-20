@@ -1,24 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="uk">
 <head>
+    <meta charset="UTF-8">
     <title>{{ hall.name }}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>{{ hall.name }}</h1>
-    <p>{{ hall.description }}</p>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Ігровий клуб "GameTime"</h1>
+            <nav class="nav">
+                <a href="/">Головна</a>
+                <a href="{% url 'hall_list' %}">Зали</a>
+            </nav>
+        </div>
+    </header>
 
-    <h2>Доступні столи</h2>
-    <ul>
-        {% for place in places %}
-            <li>
-                {{ place.number }} ({{ place.category.name }})
-                <a href="{% url 'create_booking' place.id %}">Забронювати</a>
-            </li>
-        {% empty %}
-            <li>У цьому залі ще немає столів.</li>
-        {% endfor %}
-    </ul>
+    <!-- Блок з інформацією про зал -->
+    <section class="section dark">
+        <div class="container">
+            <h2>{{ hall.name }}</h2>
+            <p>{{ hall.description }}</p>
+        </div>
+    </section>
 
-    <a href="{% url 'hall_list' %}">← Назад до залів</a>
+    <!-- Доступні столи -->
+    <section class="section">
+        <div class="container">
+            <h2>Доступні столи</h2>
+            <ul class="place-list">
+                {% for place in places %}
+                    <li>
+                        <span class="available">№{{ place.number }}</span> 
+                        <span>({{ place.category.name }})</span>
+                        <a href="{% url 'create_booking' place.id %}" class="btn">Забронювати</a>
+                    </li>
+                {% empty %}
+                    <li class="booked">У цьому залі ще немає столів.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </section>
+
+    <!-- Назад -->
+    <section class="section dark">
+        <div class="container" style="text-align:center;">
+            <a href="{% url 'hall_list' %}" class="btn">← Назад до залів</a>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>© 2025 GameTime</p>
+    </footer>
 </body>
 </html>

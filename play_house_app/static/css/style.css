@@ -79,13 +79,33 @@ body {
     border-top: 3px solid #1db954;
 }
 
+.contacts-panel {
+    position: fixed;
+    top: 0;
+    right: -320px; 
+    width: 300px;
+    height: 100%;
+    background: #1c1c1c;
+    color: #eee;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.contacts-panel.active {
+    right: 0; 
+}
+
+.contacts-panel h3 {
+    color: #1db954;
+    margin-top: 0;
+}
 .halls-list2 {
     display: flex;
     flex-wrap: wrap; /* перенос на новий ряд */
     gap: 20px; /* відстань між залами */
     list-style: none;
-    background-color: #1c1c1c;
-    
     padding: 0;
 }
 
@@ -95,9 +115,7 @@ body {
     border-radius: 8px;
     padding: 10px;
     background: #1c1c1c;
-    background-color: #1c1c1c;
     text-align: center;
-
 }
 .hall-card2 img {
     max-width: 100%;
