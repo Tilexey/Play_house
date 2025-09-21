@@ -8,7 +8,7 @@ class Category(models.Model):
     
     def __str__(self):
         return self.name
-    
+
     
 class Hall(models.Model):
     name = models.CharField(max_length=100)
@@ -35,3 +35,5 @@ class Booking(models.Model):
     start_time = models.TimeField()
     end_time = models.TimeField()
     
+    def __str__(self):
+        return f"{self.place} - {self.date} {self.start_time}-{self.end_time}"

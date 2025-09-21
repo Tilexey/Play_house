@@ -82,8 +82,8 @@ body {
 .contacts-panel {
     position: fixed;
     top: 0;
-    right: -320px; 
-    width: 300px;
+    right: -425px; 
+    width: 400px;
     height: 100%;
     background: #1c1c1c;
     color: #eee;
@@ -120,4 +120,110 @@ body {
 .hall-card2 img {
     max-width: 100%;
     border-radius: 6px;
+}
+
+.conn-panel {
+    position: fixed;
+    top: 0;
+    right: -425px; 
+    width: 400px;
+    height: 100%;
+    background: #1c1c1c;
+    color: #eee;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+.conn-panel.active {
+    right: 0; 
+}
+
+.conn-panel h3 {
+    color: #1db954;
+    margin-top: 0;
+}
+
+/* Стили для панели регистрации */
+#register-panel {
+    position: fixed;
+    top: 0;
+    right: -425px; 
+    width: 400px;
+    height: 100%;
+    background: #1c1c1c;
+    color: #eee;
+    box-shadow: -3px 0 10px rgba(0,0,0,0.5);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+#register-panel.active {
+    right: 0; 
+}
+
+#register-panel h3 {
+    color: #1db954;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+#register-panel .form-label {
+    color: #eee;
+}
+
+#register-panel .form-control {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    color: #eee;
+}
+
+#register-panel .form-control:focus {
+    background-color: #2c2c2c;
+    border-color: #1db954;
+    color: #eee;
+    box-shadow: 0 0 0 0.2rem rgba(29, 185, 84, 0.25);
+}
+
+#register-panel .btn-close-white {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+/* ===== ШАПКА + НАВИГАЦИЯ ===== */
+.site-header {
+    background: #0b2a1f;            /* тёмный фон */
+    border-bottom: 2px solid #1db954;
+    text-align: center;
+    padding: 15px 0;
+}
+.site-header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1db954;
+    margin-bottom: 10px;
+}
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+.main-nav ul li {
+    display: inline-block;
+}
+.main-nav ul li a {
+    color: #eee;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: background 0.3s, color 0.3s;
+}
+.main-nav ul li a:hover {
+    background: #1db954;
+    color: #000;
 }

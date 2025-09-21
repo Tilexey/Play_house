@@ -13,30 +13,42 @@
             <nav class="nav">
                 <a href="/">Головна</a>
                 <a href="/halls/">Зали</a>
-                <a href="/booking/">Бронювання</a>
             </nav>
         </div>
     </header>
     <div class="container main-layout">
-        <!-- Основний контент -->
+
         <main class="content">
-            <article>
-                <h1>Наші зали</h1>
-                <ul class="halls-list2">
-                    {% for hall in halls %}
-                        <li class="hall-card2">
-                            <a href="{% url 'hall_detail' hall.id %}">
-                                <h3>{{ hall.name }}</h3>
-                                {% if hall.image %}
-                                    <img src="{{ hall.image.url }}" alt="{{ hall.name }}">
-                                {% endif %}
-                            </a>
-                            <p>{{ hall.description }}</p>
-                        </li>
-                    {% endfor %}
-                </ul>
-            </article>
-        </main>        
+        <article>
+            <h1>Наші зали</h1>
+            <ul class="halls-list2">
+                {% for hall in halls %}
+                    <li class="hall-card2">
+                        <a href="{% url 'place_detail' hall.id %}">
+                            <h3>{{ hall.name }}</h3>
+                            {% if hall.image %}
+                                <img src="{{ hall.image.url }}" alt="{{ place.name }}">
+                            {% endif %}
+                        </a>
+                        <p>{{ place.description }}</p>
+                        
+                        <div class="places-list">
+                            <h4>Столи:</h4>
+                            <ul>
+                                {% for place in hall.place_set.all %}
+                                    <li>
+                                        <a href="{% url 'place_detail' place.id %}">
+                                            Стіл №{{ place.number }} - {{ place.category.name }}
+                                        </a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </article>
+    </main>        
 </div>
 </body>
 </html>
